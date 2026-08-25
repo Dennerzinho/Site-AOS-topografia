@@ -56,9 +56,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/80 backdrop-blur-md animate-fade-in">
       <div
-        className="relative w-full max-w-lg bg-[#0A0A0A] border border-white/20 rounded-[12px] p-6 sm:p-8 shadow-2xl text-white"
+        className="relative w-full max-w-lg bg-primary border border-white/20 rounded-[12px] p-6 sm:p-8 shadow-2xl text-white"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -81,7 +81,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                 {type === 'formulario' && <FileText className="w-3.5 h-3.5" />}
                 <span>AOS Topografia</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-heading font-bold uppercase tracking-wider text-white">
                 {getTitle()}
               </h3>
               <p className="text-xs sm:text-sm text-white/70 mt-1.5 leading-relaxed">
@@ -101,7 +101,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ex: João da Silva / Construtora RS"
-                  className="w-full bg-[#121212] border border-white/15 focus:border-white rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none transition-colors"
+                  className="w-full bg-primary-light border border-white/15 focus:border-accent rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none transition-colors"
                 />
               </div>
 
@@ -116,7 +116,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="seuemail@exemplo.com"
-                    className="w-full bg-[#121212] border border-white/15 focus:border-white rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none transition-colors"
+                    className="w-full bg-primary-light border border-white/15 focus:border-accent rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -127,7 +127,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                   <select
                     value={segment}
                     onChange={(e) => setSegment(e.target.value)}
-                    className="w-full bg-[#121212] border border-white/15 focus:border-white rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none transition-colors"
+                    className="w-full bg-primary-light border border-white/15 focus:border-accent rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none transition-colors"
                   >
                     <option value="Residencial">01. Residencial</option>
                     <option value="Comercial">02. Comercial</option>
@@ -146,7 +146,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   placeholder="Ex: Nova Santa Rita / RS, Canoas, Porto Alegre..."
-                  className="w-full bg-[#121212] border border-white/15 focus:border-white rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none transition-colors"
+                  className="w-full bg-primary-light border border-white/15 focus:border-accent rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none transition-colors"
                 />
               </div>
 
@@ -159,14 +159,14 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Descreva brevemente o levantamento planialtimétrico, demarcação, loteamento ou medição..."
-                  className="w-full bg-[#121212] border border-white/15 focus:border-white rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none transition-colors resize-none"
+                  className="w-full bg-primary-light border border-white/15 focus:border-accent rounded-lg px-3.5 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none transition-colors resize-none"
                 />
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-white/90 transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                  className="flex-1 px-6 py-3 rounded-full bg-accent text-white font-semibold text-xs uppercase tracking-wider hover:bg-accent-hover transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Enviar Solicitação</span>
@@ -175,7 +175,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                 <button
                   type="button"
                   onClick={handleOpenWhatsApp}
-                  className="px-5 py-3 rounded-full border border-white/30 hover:border-white bg-white/5 hover:bg-white/10 text-white font-medium text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-5 py-3 rounded-full border border-white hover:border-white bg-transparent hover:bg-white text-white hover:text-primary font-medium text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>Falar no WhatsApp</span>
@@ -185,10 +185,10 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
           </div>
         ) : (
           <div className="py-8 text-center flex flex-col items-center">
-            <div className="w-14 h-14 rounded-full border border-white/30 bg-white/10 flex items-center justify-center mb-4">
-              <CheckCircle2 className="w-8 h-8 text-white" />
+            <div className="w-14 h-14 rounded-full border border-accent bg-accent/15 flex items-center justify-center mb-4">
+              <CheckCircle2 className="w-8 h-8 text-accent" />
             </div>
-            <h4 className="text-2xl font-heading font-bold text-white mb-2">
+            <h4 className="text-xl font-heading font-bold uppercase tracking-wider text-white mb-2">
               Solicitação Registrada!
             </h4>
             <p className="text-sm text-white/70 max-w-sm mb-6 leading-relaxed">
@@ -198,14 +198,14 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
               <button
                 type="button"
                 onClick={onClose}
-                className="px-6 py-2.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-wider hover:bg-white/90 transition-all"
+                className="px-6 py-2.5 rounded-full bg-accent text-white font-semibold text-xs uppercase tracking-wider hover:bg-accent-hover transition-all"
               >
                 Concluir
               </button>
               <button
                 type="button"
                 onClick={handleOpenWhatsApp}
-                className="px-5 py-2.5 rounded-full border border-white/30 hover:border-white text-white text-xs uppercase tracking-wider transition-all"
+                className="px-5 py-2.5 rounded-full border border-white hover:border-white hover:bg-white hover:text-primary text-white text-xs uppercase tracking-wider transition-all"
               >
                 Abrir WhatsApp
               </button>

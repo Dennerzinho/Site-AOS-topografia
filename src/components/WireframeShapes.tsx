@@ -1,4 +1,5 @@
 import React from 'react';
+import aosLogo from '../assets/aos-logo.png';
 
 /**
  * High-precision vector wireframe geometric shapes on pure dark background
@@ -6,29 +7,14 @@ import React from 'react';
  */
 
 // Monogram Logo: AOS Topografia with geometric coordinate marker
-export const AOSLogo: React.FC<{ className?: string }> = ({ className = "h-8" }) => {
+export const AOSLogo: React.FC<{ className?: string }> = ({ className = "" }) => {
   return (
-    <div className={`flex items-center gap-3 cursor-pointer group select-none ${className}`}>
-      {/* Monogram Icon */}
-      <div className="relative w-8 h-8 rounded-lg border border-white/20 bg-white/5 flex items-center justify-center overflow-hidden group-hover:border-white/50 transition-colors">
-        <svg viewBox="0 0 40 40" fill="none" className="w-6 h-6">
-          {/* Topographic triangulation network */}
-          <polygon points="20,6 34,32 6,32" stroke="#FFFFFF" strokeWidth="1.5" fill="none" />
-          <line x1="20" y1="6" x2="20" y2="32" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="2 2" strokeOpacity="0.7" />
-          <line x1="13" y1="20" x2="27" y2="20" stroke="#FFFFFF" strokeWidth="1.2" />
-          <circle cx="20" cy="6" r="2" fill="#FFFFFF" />
-          <circle cx="6" cy="32" r="1.5" fill="#FFFFFF" />
-          <circle cx="34" cy="32" r="1.5" fill="#FFFFFF" />
-          <circle cx="20" cy="20" r="1.5" fill="#FFFFFF" />
-        </svg>
-      </div>
-
-      {/* Brand Text */}
-      <div className="flex flex-col">
-        <span className="font-heading font-extrabold tracking-tight text-lg text-white leading-tight">
-          AOS <span className="font-light text-white/70">Topografia</span>
-        </span>
-      </div>
+    <div className={`flex items-center cursor-pointer group select-none ${className}`}>
+      <img
+        src={aosLogo}
+        alt="AOS Topografia"
+        className="h-10 w-auto opacity-95 group-hover:opacity-100 transition-opacity"
+      />
     </div>
   );
 };

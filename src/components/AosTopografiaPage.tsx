@@ -1,17 +1,13 @@
 import React from 'react';
+import aosLogo from '../assets/aos-logo.png';
 import {
   AOSLogo,
   ResidencialWireframe,
   ComercialWireframe,
   IndustrialWireframe,
-  TopoMeshWireframe,
-  GuaranteeWireframe,
-  TheodoliteWireframe,
-  GeodesicWireframe,
-  TimelineWireframe,
 } from './WireframeShapes';
 import { ModalType } from './ContactModal';
-import { Mail, MapPin, ArrowRight, MessageSquare, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Mail, MapPin, ArrowRight, MessageSquare, Linkedin, Instagram, Facebook, ClipboardList, Globe, Crosshair, Scissors, UserCheck, FileCheck2 } from 'lucide-react';
 
 interface AosTopografiaPageProps {
   onOpenModal: (type: ModalType) => void;
@@ -34,9 +30,9 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
     <div
       ref={bannerRef}
       id="aos-topografia-layout"
-      className="w-full max-w-[1240px] mx-auto bg-[#0A0A0A] text-white selection:bg-white selection:text-black box-border flex flex-col font-sans"
+      className="w-full max-w-[1240px] mx-auto text-white selection:bg-accent selection:text-white box-border flex flex-col font-sans"
       style={{
-        backgroundColor: '#0A0A0A',
+        backgroundColor: 'transparent',
         color: '#FFFFFF',
       }}
     >
@@ -46,7 +42,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
          ========================================================================= */}
       <header
         id="navbar"
-        className="w-full px-6 sm:px-10 py-6 flex items-center justify-between border-b border-white/[0.12] bg-[#0A0A0A]/95 backdrop-blur-md sticky top-0 z-30"
+        className="w-full px-6 sm:px-10 py-6 flex items-center justify-between border-b border-white/[0.12] bg-primary/95 backdrop-blur-md sticky top-0 z-30"
       >
         {/* Logo à esquerda */}
         <a href="#hero" className="flex items-center no-underline">
@@ -68,10 +64,10 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             Serviços
           </a>
           <a
-            href="#diferenciais"
+            href="#solucoes"
             className="hover:text-white transition-colors duration-200"
           >
-            Experiência
+            Soluções
           </a>
           <a
             href="#contato"
@@ -86,8 +82,8 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           <button
             type="button"
             onClick={() => onOpenModal('orcamento')}
-            className="px-5 py-2.5 rounded-full bg-white text-black text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-white/90 transition-all duration-200 shadow-sm cursor-pointer"
-            style={{ backgroundColor: '#FFFFFF', color: '#0A0A0A' }}
+            className="px-5 py-2.5 rounded-full bg-accent text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-accent-hover transition-all duration-200 shadow-sm cursor-pointer"
+            style={{ backgroundColor: '#FE930E', color: '#FFFFFF' }}
           >
             Peça um orçamento
           </button>
@@ -102,18 +98,16 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         id="hero"
         className="pt-20 sm:pt-28 pb-20 sm:pb-28 px-6 sm:px-10 text-center flex flex-col items-center justify-center relative overflow-hidden"
       >
-        {/* Eyebrow com letras maiúsculas e espaçamento */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.15] bg-white/[0.04] mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-          <p className="text-[11px] sm:text-xs uppercase font-semibold tracking-[0.24em] text-white/90">
-            TOPOGRAFIA &bull; NOVA SANTA RITA / RS
-          </p>
-        </div>
+        {/* Logo da empresa no lugar do título */}
+        <img
+          src={aosLogo}
+          alt="AOS Topografia"
+          className="h-16 sm:h-20 md:h-24 w-auto mb-8"
+        />
 
-        {/* Título gigante em duas linhas com tracking negativo */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-heading font-extrabold text-white leading-[1.04] tracking-[-0.04em] mb-8 max-w-5xl">
-          Topografia de excelência,
-          <br className="hidden sm:inline" /> obras sem surpresas.
+        {/* Frase de posicionamento, na mesma tipografia dos botões */}
+        <h1 className="text-sm sm:text-base md:text-lg font-heading font-bold uppercase tracking-wider text-white mb-8 max-w-3xl">
+          Topografia de excelência, obras sem surpresas.
         </h1>
 
         {/* Subtítulo de apoio */}
@@ -127,8 +121,8 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           <button
             type="button"
             onClick={() => onOpenModal('reuniao')}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-black font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-white/90 transition-all duration-200 cursor-pointer shadow-lg flex items-center justify-center gap-2"
-            style={{ backgroundColor: '#FFFFFF', color: '#0A0A0A' }}
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-200 cursor-pointer shadow-lg flex items-center justify-center gap-2"
+            style={{ backgroundColor: '#FE930E', color: '#FFFFFF' }}
           >
             <span>Marque uma reunião</span>
             <ArrowRight className="w-4 h-4" />
@@ -138,7 +132,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           <button
             type="button"
             onClick={() => onOpenModal('formulario')}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/[0.35] hover:border-white bg-white/[0.03] hover:bg-white/[0.08] text-white font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white hover:border-white bg-transparent hover:bg-white text-white hover:text-primary font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
           >
             <span>Peça um formulário</span>
           </button>
@@ -151,7 +145,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
          ========================================================================= */}
       <section
         id="stats"
-        className="w-full border-t border-b border-white/[0.12] px-6 sm:px-10 py-7 bg-[#0A0A0A]"
+        className="w-full border-t border-b border-white/[0.12] px-6 sm:px-10 py-7"
       >
         <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/[0.12]">
           {/* Stat 1: LOCALIZAÇÃO */}
@@ -159,7 +153,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <span className="text-[11px] uppercase tracking-[0.2em] text-white/60 font-semibold mb-1">
               LOCALIZAÇÃO
             </span>
-            <span className="text-base sm:text-lg md:text-xl font-heading font-bold text-white tracking-tight">
+            <span className="text-base sm:text-lg md:text-xl font-heading font-bold uppercase tracking-wider text-white">
               Nova Santa Rita / RS
             </span>
           </div>
@@ -169,7 +163,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <span className="text-[11px] uppercase tracking-[0.2em] text-white/60 font-semibold mb-1">
               EXPERIÊNCIA
             </span>
-            <span className="text-base sm:text-lg md:text-xl font-heading font-bold text-white tracking-tight">
+            <span className="text-base sm:text-lg md:text-xl font-heading font-bold uppercase tracking-wider text-white">
               10+ anos
             </span>
           </div>
@@ -179,7 +173,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <span className="text-[11px] uppercase tracking-[0.2em] text-white/60 font-semibold mb-1">
               SEGMENTOS
             </span>
-            <span className="text-base sm:text-lg md:text-xl font-heading font-bold text-white tracking-tight">
+            <span className="text-base sm:text-lg md:text-xl font-heading font-bold uppercase tracking-wider text-white">
               3
             </span>
           </div>
@@ -189,7 +183,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <span className="text-[11px] uppercase tracking-[0.2em] text-white/60 font-semibold mb-1">
               GARANTIA
             </span>
-            <span className="text-base sm:text-lg md:text-xl font-heading font-bold text-white tracking-tight">
+            <span className="text-base sm:text-lg md:text-xl font-heading font-bold uppercase tracking-wider text-white">
               100%
             </span>
           </div>
@@ -206,7 +200,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <span className="text-xs uppercase tracking-[0.25em] text-white/60 font-semibold mb-2 block">
               SEGMENTOS DE ATUAÇÃO
             </span>
-            <h2 className="text-3xl sm:text-5xl font-heading font-extrabold tracking-[-0.035em] text-white">
+            <h2 className="text-2xl sm:text-4xl font-heading font-bold uppercase tracking-wider text-white">
               Onde a gente atua
             </h2>
           </div>
@@ -219,7 +213,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 01: Residencial */}
           <div
-            className="wireframe-card p-7 sm:p-8 min-h-[380px] flex flex-col justify-between group"
+            className="wireframe-card p-7 sm:p-8 min-h-[300px] flex flex-col justify-between group"
             style={{ borderRadius: '12px' }}
           >
             <div>
@@ -227,11 +221,11 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
                 <span className="text-xs uppercase tracking-widest text-white/50 font-bold">
                   SEGMENTO
                 </span>
-                <span className="text-xs font-heading font-bold text-white/70 tracking-wider">
+                <span className="text-xs font-heading font-bold text-accent tracking-wider">
                   01
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-3 tracking-tight">
+              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-white mb-3">
                 Residencial
               </h3>
               <p className="text-sm text-white/75 leading-relaxed">
@@ -240,14 +234,14 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             </div>
 
             {/* Wireframe Geométrico 3D */}
-            <div className="mt-8 pt-4 flex items-end justify-between border-t border-white/[0.08]">
+            <div className="mt-5 pt-4 flex items-end justify-between border-t border-white/[0.08]">
               <div className="transform group-hover:scale-105 transition-transform duration-300">
-                <ResidencialWireframe className="w-24 h-24 sm:w-28 sm:h-28" />
+                <ResidencialWireframe className="w-20 h-20 sm:w-24 sm:h-24" />
               </div>
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white flex items-center gap-1 cursor-pointer"
+                className="text-xs font-semibold uppercase tracking-wider text-accent group-hover:text-accent-hover flex items-center gap-1 cursor-pointer"
               >
                 <span>Solicitar</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -257,7 +251,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
           {/* Card 02: Comercial */}
           <div
-            className="wireframe-card p-7 sm:p-8 min-h-[380px] flex flex-col justify-between group"
+            className="wireframe-card p-7 sm:p-8 min-h-[300px] flex flex-col justify-between group"
             style={{ borderRadius: '12px' }}
           >
             <div>
@@ -265,11 +259,11 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
                 <span className="text-xs uppercase tracking-widest text-white/50 font-bold">
                   SEGMENTO
                 </span>
-                <span className="text-xs font-heading font-bold text-white/70 tracking-wider">
+                <span className="text-xs font-heading font-bold text-accent tracking-wider">
                   02
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-3 tracking-tight">
+              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-white mb-3">
                 Comercial
               </h3>
               <p className="text-sm text-white/75 leading-relaxed">
@@ -278,14 +272,14 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             </div>
 
             {/* Wireframe Geométrico 3D */}
-            <div className="mt-8 pt-4 flex items-end justify-between border-t border-white/[0.08]">
+            <div className="mt-5 pt-4 flex items-end justify-between border-t border-white/[0.08]">
               <div className="transform group-hover:scale-105 transition-transform duration-300">
-                <ComercialWireframe className="w-24 h-24 sm:w-28 sm:h-28" />
+                <ComercialWireframe className="w-20 h-20 sm:w-24 sm:h-24" />
               </div>
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white flex items-center gap-1 cursor-pointer"
+                className="text-xs font-semibold uppercase tracking-wider text-accent group-hover:text-accent-hover flex items-center gap-1 cursor-pointer"
               >
                 <span>Solicitar</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -295,7 +289,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
           {/* Card 03: Industrial */}
           <div
-            className="wireframe-card p-7 sm:p-8 min-h-[380px] flex flex-col justify-between group"
+            className="wireframe-card p-7 sm:p-8 min-h-[300px] flex flex-col justify-between group"
             style={{ borderRadius: '12px' }}
           >
             <div>
@@ -303,11 +297,11 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
                 <span className="text-xs uppercase tracking-widest text-white/50 font-bold">
                   SEGMENTO
                 </span>
-                <span className="text-xs font-heading font-bold text-white/70 tracking-wider">
+                <span className="text-xs font-heading font-bold text-accent tracking-wider">
                   03
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-3 tracking-tight">
+              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-white mb-3">
                 Industrial
               </h3>
               <p className="text-sm text-white/75 leading-relaxed">
@@ -316,14 +310,14 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             </div>
 
             {/* Wireframe Geométrico 3D */}
-            <div className="mt-8 pt-4 flex items-end justify-between border-t border-white/[0.08]">
+            <div className="mt-5 pt-4 flex items-end justify-between border-t border-white/[0.08]">
               <div className="transform group-hover:scale-105 transition-transform duration-300">
-                <IndustrialWireframe className="w-24 h-24 sm:w-28 sm:h-28" />
+                <IndustrialWireframe className="w-20 h-20 sm:w-24 sm:h-24" />
               </div>
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="text-xs font-semibold uppercase tracking-wider text-white/80 group-hover:text-white flex items-center gap-1 cursor-pointer"
+                className="text-xs font-semibold uppercase tracking-wider text-accent group-hover:text-accent-hover flex items-center gap-1 cursor-pointer"
               >
                 <span>Solicitar</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -340,7 +334,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
          ========================================================================= */}
       <section
         id="sobre"
-        className="py-24 sm:py-32 px-6 sm:px-10 border-t border-white/[0.12] bg-[#0A0A0A]"
+        className="py-24 sm:py-32 px-6 sm:px-10 border-t border-white/[0.12]"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Coluna Texto (5 colunas) */}
@@ -351,7 +345,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             </span>
 
             {/* Título */}
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-[-0.035em] text-white mb-8">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-heading font-bold uppercase tracking-wider text-white mb-8">
               Nossa Experiência
             </h2>
 
@@ -370,8 +364,8 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenModal('reuniao')}
-                className="px-8 py-3.5 rounded-full bg-white text-black font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-white/90 transition-all duration-200 cursor-pointer shadow-md inline-flex items-center gap-2"
-                style={{ backgroundColor: '#FFFFFF', color: '#0A0A0A' }}
+                className="px-8 py-3.5 rounded-full bg-accent text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-200 cursor-pointer shadow-md inline-flex items-center gap-2"
+                style={{ backgroundColor: '#FE930E', color: '#FFFFFF' }}
               >
                 <span>Marque uma reunião</span>
                 <ArrowRight className="w-4 h-4" />
@@ -387,19 +381,23 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             >
               <div className="flex items-center justify-between mb-4 border-b border-white/[0.08] pb-3">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-white/80" />
+                  <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-[11px] uppercase tracking-wider text-white/60 font-semibold">
-                    MALHA TOPOGRÁFICA / GEORREFERENCIAMENTO
+                    AOS TOPOGRAFIA / EQUIPE EM CAMPO
                   </span>
                 </div>
                 <span className="text-[11px] text-white/40 font-mono">
-                  DATUM SIRGAS 2000
+                  10+ ANOS
                 </span>
               </div>
 
-              {/* Malha Vetorial de Relevo */}
-              <div className="w-full flex items-center justify-center py-2">
-                <TopoMeshWireframe className="w-full h-auto max-h-[300px]" />
+              {/* Foto da equipe em campo */}
+              <div className="w-full py-2">
+                <img
+                  src="/aos-equipe.webp"
+                  alt="Equipe da AOS Topografia em campo"
+                  className="w-full h-[320px] object-cover object-[50%_26%] rounded-lg"
+                />
               </div>
 
               <div className="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] text-white/50">
@@ -412,138 +410,143 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
       </section>
 
       {/* =========================================================================
-          6) SEÇÃO DE DIFERENCIAIS
-          Título: "Por que a AOS?"
-          Grid de cards 01-04 numerados com ícones/formas wireframe
+          6) SEÇÃO DE SOLUÇÕES
+          Título: "Como podemos ajudar no seu projeto:"
+          Grid de 6 cards claros: ícone laranja, descrição e botão "Saiba Mais!"
          ========================================================================= */}
       <section
-        id="diferenciais"
-        className="py-24 sm:py-32 px-6 sm:px-10 border-t border-white/[0.12] bg-[#0A0A0A]"
+        id="solucoes"
+        className="py-24 sm:py-32 px-6 sm:px-10 border-t border-white/[0.12]"
       >
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.28em] text-white/60 font-semibold mb-3 block">
-            NOSSOS PILARES
-          </span>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-[-0.035em] text-white mb-6">
-            Por que a AOS?
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-heading font-bold uppercase tracking-wider text-white mb-6">
+            Como podemos ajudar no seu projeto:
           </h2>
           <p className="text-base text-white/70 leading-relaxed">
-            Metodologia rigorosa e equipamentos calibrados para eliminar retrabalho e garantir conformidade técnica absoluta.
+            Temos as soluções completas para obras, terrenos e projetos, com precisão, agilidade e segurança.
           </p>
         </div>
 
-        {/* Grid 2x2 de Cards Numerados 01-04 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Diferencial 01: 100% de garantia de satisfação */}
-          <div
-            className="wireframe-card p-7 min-h-[360px] flex flex-col justify-between group"
-            style={{ borderRadius: '12px' }}
-          >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs uppercase tracking-widest text-white/50 font-bold">
-                  DIFERENCIAL
-                </span>
-                <span className="text-xs font-heading font-bold text-white/70 tracking-wider">
-                  01
-                </span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-heading font-bold text-white mb-3 tracking-tight">
-                100% de garantia de satisfação
-              </h3>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-                Rigor técnico absoluto e conformidade com todas as normas ABNT em cada levantamento executado.
-              </p>
+        {/* Grid de 6 cards claros */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Solução 01: Levantamento Planialtimétrico */}
+          <div className="bg-white rounded-[12px] p-7 h-full flex flex-col items-start">
+            <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-6">
+              <ClipboardList className="w-6 h-6 text-white" />
             </div>
-
-            <div className="mt-8 pt-4 flex items-end justify-between border-t border-white/[0.08]">
-              <GuaranteeWireframe className="w-16 h-16 transform group-hover:scale-105 transition-transform duration-300" />
-              <span className="text-xs font-mono text-white/50">ABNT / INCRA</span>
-            </div>
+            <h3 className="text-lg font-heading font-bold uppercase tracking-wider text-text-primary mb-3">
+              Levantamento Planialtimétrico
+            </h3>
+            <p className="text-sm text-accent leading-relaxed mb-6">
+              Medições detalhadas para projetos de engenharia e arquitetura.
+            </p>
+            <button
+              type="button"
+              onClick={() => onOpenModal('orcamento')}
+              className="mt-auto px-4 py-2 rounded-md border border-black/10 text-text-primary text-xs font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+            >
+              Saiba Mais!
+            </button>
           </div>
 
-          {/* Diferencial 02: Equipes altamente capacitadas */}
-          <div
-            className="wireframe-card p-7 min-h-[360px] flex flex-col justify-between group"
-            style={{ borderRadius: '12px' }}
-          >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs uppercase tracking-widest text-white/50 font-bold">
-                  DIFERENCIAL
-                </span>
-                <span className="text-xs font-heading font-bold text-white/70 tracking-wider">
-                  02
-                </span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-heading font-bold text-white mb-3 tracking-tight">
-                Equipes altamente capacitadas
-              </h3>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-                Engenheiros e agrimensores experientes operando equipamentos de alta precisão milimétrica.
-              </p>
+          {/* Solução 02: Georreferenciamento de Imóveis Rurais */}
+          <div className="bg-white rounded-[12px] p-7 h-full flex flex-col items-start">
+            <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-6">
+              <Globe className="w-6 h-6 text-white" />
             </div>
-
-            <div className="mt-8 pt-4 flex items-end justify-between border-t border-white/[0.08]">
-              <TheodoliteWireframe className="w-16 h-16 transform group-hover:scale-105 transition-transform duration-300" />
-              <span className="text-xs font-mono text-white/50">CREA-RS</span>
-            </div>
+            <h3 className="text-lg font-heading font-bold uppercase tracking-wider text-text-primary mb-3">
+              Georreferenciamento de Imóveis Rurais
+            </h3>
+            <p className="text-sm text-accent leading-relaxed mb-6">
+              Conformidade legal e precisão na demarcação de propriedades.
+            </p>
+            <button
+              type="button"
+              onClick={() => onOpenModal('orcamento')}
+              className="mt-auto px-4 py-2 rounded-md border border-black/10 text-text-primary text-xs font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+            >
+              Saiba Mais!
+            </button>
           </div>
 
-          {/* Diferencial 03: 10+ anos no ramo */}
-          <div
-            className="wireframe-card p-7 min-h-[360px] flex flex-col justify-between group"
-            style={{ borderRadius: '12px' }}
-          >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs uppercase tracking-widest text-white/50 font-bold">
-                  DIFERENCIAL
-                </span>
-                <span className="text-xs font-heading font-bold text-white/70 tracking-wider">
-                  03
-                </span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-heading font-bold text-white mb-3 tracking-tight">
-                10+ anos no ramo
-              </h3>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-                Solidez comprovada em centenas de projetos executados com excelência por todo o Rio Grande do Sul.
-              </p>
+          {/* Solução 03: Locação de Obras */}
+          <div className="bg-white rounded-[12px] p-7 h-full flex flex-col items-start">
+            <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-6">
+              <Crosshair className="w-6 h-6 text-white" />
             </div>
-
-            <div className="mt-8 pt-4 flex items-end justify-between border-t border-white/[0.08]">
-              <GeodesicWireframe className="w-16 h-16 transform group-hover:scale-105 transition-transform duration-300" />
-              <span className="text-xs font-mono text-white/50">Desde 2014</span>
-            </div>
+            <h3 className="text-lg font-heading font-bold uppercase tracking-wider text-text-primary mb-3">
+              Locação de Obras
+            </h3>
+            <p className="text-sm text-accent leading-relaxed mb-6">
+              Marcação exata para execução de construções.
+            </p>
+            <button
+              type="button"
+              onClick={() => onOpenModal('orcamento')}
+              className="mt-auto px-4 py-2 rounded-md border border-black/10 text-text-primary text-xs font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+            >
+              Saiba Mais!
+            </button>
           </div>
 
-          {/* Diferencial 04: Entrega nos prazos determinados */}
-          <div
-            className="wireframe-card p-7 min-h-[360px] flex flex-col justify-between group"
-            style={{ borderRadius: '12px' }}
-          >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs uppercase tracking-widest text-white/50 font-bold">
-                  DIFERENCIAL
-                </span>
-                <span className="text-xs font-heading font-bold text-white/70 tracking-wider">
-                  04
-                </span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-heading font-bold text-white mb-3 tracking-tight">
-                Entrega nos prazos determinados
-              </h3>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-                Planejamento ágil e compromisso inegociável com o cronograma da sua obra.
-              </p>
+          {/* Solução 04: Desmembramento */}
+          <div className="bg-white rounded-[12px] p-7 h-full flex flex-col items-start">
+            <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-6">
+              <Scissors className="w-6 h-6 text-white" />
             </div>
+            <h3 className="text-lg font-heading font-bold uppercase tracking-wider text-text-primary mb-3">
+              Desmembramento
+            </h3>
+            <p className="text-sm text-accent leading-relaxed mb-6">
+              Efetuamos a divisão regularizada de áreas urbanas e rurais.
+            </p>
+            <button
+              type="button"
+              onClick={() => onOpenModal('orcamento')}
+              className="mt-auto px-4 py-2 rounded-md border border-black/10 text-text-primary text-xs font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+            >
+              Saiba Mais!
+            </button>
+          </div>
 
-            <div className="mt-8 pt-4 flex items-end justify-between border-t border-white/[0.08]">
-              <TimelineWireframe className="w-16 h-16 transform group-hover:scale-105 transition-transform duration-300" />
-              <span className="text-xs font-mono text-white/50">Pontualidade</span>
+          {/* Solução 05: Usucapião */}
+          <div className="bg-white rounded-[12px] p-7 h-full flex flex-col items-start">
+            <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-6">
+              <UserCheck className="w-6 h-6 text-white" />
             </div>
+            <h3 className="text-lg font-heading font-bold uppercase tracking-wider text-text-primary mb-3">
+              Usucapião
+            </h3>
+            <p className="text-sm text-accent leading-relaxed mb-6">
+              Suporte técnico para processos de regularização.
+            </p>
+            <button
+              type="button"
+              onClick={() => onOpenModal('orcamento')}
+              className="mt-auto px-4 py-2 rounded-md border border-black/10 text-text-primary text-xs font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+            >
+              Saiba Mais!
+            </button>
+          </div>
+
+          {/* Solução 06: Retificação */}
+          <div className="bg-white rounded-[12px] p-7 h-full flex flex-col items-start">
+            <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-6">
+              <FileCheck2 className="w-6 h-6 text-white" />
+            </div>
+            <h3 className="text-lg font-heading font-bold uppercase tracking-wider text-text-primary mb-3">
+              Retificação
+            </h3>
+            <p className="text-sm text-accent leading-relaxed mb-6">
+              Correções de registros imobiliários com base em medições atualizadas.
+            </p>
+            <button
+              type="button"
+              onClick={() => onOpenModal('orcamento')}
+              className="mt-auto px-4 py-2 rounded-md border border-black/10 text-text-primary text-xs font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+            >
+              Saiba Mais!
+            </button>
           </div>
         </div>
       </section>
@@ -560,7 +563,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
          ========================================================================= */}
       <footer
         id="contato"
-        className="pt-24 pb-14 px-6 sm:px-10 border-t border-white/[0.12] bg-[#0A0A0A]"
+        className="pt-24 pb-14 px-6 sm:px-10 border-t border-white/[0.12]"
       >
         {/* Bloco de Chamada Principal */}
         <div
@@ -571,7 +574,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             PRÓXIMO PASSO
           </span>
 
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-[-0.035em] text-white mb-6 max-w-3xl">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-heading font-bold uppercase tracking-wider text-white mb-6 max-w-3xl">
             Vamos começar sua obra do jeito certo.
           </h2>
 
@@ -585,8 +588,8 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <button
               type="button"
               onClick={handleWhatsAppClick}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-black font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-white/90 transition-all duration-200 cursor-pointer shadow-lg flex items-center justify-center gap-2"
-              style={{ backgroundColor: '#FFFFFF', color: '#0A0A0A' }}
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-200 cursor-pointer shadow-lg flex items-center justify-center gap-2"
+              style={{ backgroundColor: '#FE930E', color: '#FFFFFF' }}
             >
               <MessageSquare className="w-4 h-4" />
               <span>Falar no WhatsApp</span>
@@ -596,7 +599,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <button
               type="button"
               onClick={() => onOpenModal('formulario')}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/[0.35] hover:border-white bg-white/[0.04] hover:bg-white/[0.08] text-white font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white hover:border-white bg-transparent hover:bg-white text-white hover:text-primary font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
             >
               <span>Peça um formulário</span>
             </button>
@@ -621,7 +624,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
             {/* E-mail */}
             <div className="flex items-center gap-2.5 text-xs sm:text-sm text-white/90">
-              <Mail className="w-4 h-4 text-white/70 flex-shrink-0" />
+              <Mail className="w-4 h-4 text-accent flex-shrink-0" />
               <a
                 href="mailto:aos.topografia@outlook.com"
                 className="hover:text-white transition-colors"
@@ -632,7 +635,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
             {/* Endereço */}
             <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white/80">
-              <MapPin className="w-4 h-4 text-white/70 flex-shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
               <span>Rua Carlos de Souza Pereira, 99 — Nova Santa Rita / RS</span>
             </div>
           </div>
@@ -648,7 +651,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               <button
                 type="button"
                 onClick={handleWhatsAppClick}
-                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-white/[0.04] hover:bg-white/10 hover:border-white/40 flex items-center justify-center text-white transition-colors cursor-pointer"
+                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors cursor-pointer"
                 title="WhatsApp"
                 aria-label="WhatsApp"
               >
@@ -660,7 +663,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-white/[0.04] hover:bg-white/10 hover:border-white/40 flex items-center justify-center text-white transition-colors"
+                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors"
                 title="Instagram"
                 aria-label="Instagram"
               >
@@ -672,7 +675,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-white/[0.04] hover:bg-white/10 hover:border-white/40 flex items-center justify-center text-white transition-colors"
+                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors"
                 title="LinkedIn"
                 aria-label="LinkedIn"
               >
@@ -684,7 +687,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-white/[0.04] hover:bg-white/10 hover:border-white/40 flex items-center justify-center text-white transition-colors"
+                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors"
                 title="Facebook"
                 aria-label="Facebook"
               >

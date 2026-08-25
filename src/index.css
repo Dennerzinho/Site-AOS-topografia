@@ -1,5 +1,38 @@
 @import "tailwindcss";
 
+/* =========================================================================
+   TOKENS DE COR - Identidade visual AOS Topografia
+   Verde petroleo + laranja + branco.
+   Alterar um valor aqui reflete em todo o site.
+   Cada token vira tambem uma classe Tailwind:
+     --color-primary       -> bg-primary / text-primary / border-primary
+     --color-accent        -> bg-accent / text-accent / border-accent
+   ========================================================================= */
+@theme static {
+  /* Primaria - verde petroleo */
+  --color-primary: #0A292A;
+  --color-primary-light: #113C3D;
+
+  /* Secundaria - laranja (destaque, CTAs, icones) */
+  --color-accent: #FE930E;
+  --color-accent-hover: #E8840C;
+
+  /* Neutros */
+  --color-background: #F5F8F6;
+  --color-white: #FFFFFF;
+
+  /* Texto sobre fundos claros */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #5F6666;
+}
+
+:root {
+  /* Intensidade da imagem de fundo da hero.
+     0.55 = imagem visivel sob um overlay verde petroleo de ~45%.
+     Aumente para revelar mais a imagem, diminua para escurecer. */
+  --frame-visibility: 0.55;
+}
+
 @layer base {
   * {
     font-family: 'DM Sans', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -11,8 +44,8 @@
   }
   
   body {
-    background-color: #0A0A0A;
-    color: #ffffff;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -20,25 +53,27 @@
   }
 }
 
+/* Canvas das 274 frames: fica ATRAS do conteudo (z-index 0).
+   O conteudo sobe para z-10 em App.tsx.
+   A opacidade abaixo faz o papel do overlay verde petroleo:
+   a imagem compoe sobre o fundo --color-primary da pagina. */
 .scroll-frame-animation {
   position: fixed;
   inset: 0;
-  z-index: 20;
+  z-index: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  opacity: 0.12;
-  mix-blend-mode: screen;
+  opacity: var(--frame-visibility);
 }
 
 .wireframe-card {
-  background-color: #0A0A0A;
+  background-color: var(--color-primary-light);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   transition: all 0.25s ease-in-out;
 }
 
 .wireframe-card:hover {
-  border-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(254, 147, 14, 0.45);
 }
-

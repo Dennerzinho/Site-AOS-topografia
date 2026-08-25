@@ -45,7 +45,7 @@ export const ExportToolbar: React.FC<ExportToolbarProps> = ({
       const dataUrl = await toPng(bannerRef.current, {
         cacheBust: true,
         pixelRatio: pixelRatio,
-        backgroundColor: '#0A0A0A',
+        backgroundColor: '#0A292A',
         style: {
           transform: 'none',
           margin: '0 auto',
@@ -72,7 +72,7 @@ export const ExportToolbar: React.FC<ExportToolbarProps> = ({
       showToast('Gerando Vetor SVG...');
 
       const dataUrl = await toSvg(bannerRef.current, {
-        backgroundColor: '#0A0A0A',
+        backgroundColor: '#0A292A',
       });
 
       const link = document.createElement('a');
@@ -96,7 +96,7 @@ export const ExportToolbar: React.FC<ExportToolbarProps> = ({
 
       const dataUrl = await toPng(bannerRef.current, {
         pixelRatio: 2,
-        backgroundColor: '#0A0A0A',
+        backgroundColor: '#0A292A',
       });
 
       const element = bannerRef.current;
@@ -129,7 +129,7 @@ export const ExportToolbar: React.FC<ExportToolbarProps> = ({
 
       const blob = await toBlob(bannerRef.current, {
         pixelRatio: 2,
-        backgroundColor: '#0A0A0A',
+        backgroundColor: '#0A292A',
       });
 
       if (blob && navigator.clipboard && window.ClipboardItem) {
@@ -154,23 +154,23 @@ export const ExportToolbar: React.FC<ExportToolbarProps> = ({
     <>
       {/* Toast Notification */}
       {exportMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#141414] text-white text-xs md:text-sm px-4 py-3 rounded-xl border border-white/30 shadow-2xl flex items-center gap-2.5 animate-fade-in">
+        <div className="fixed bottom-6 right-6 z-50 bg-primary-light text-white text-xs md:text-sm px-4 py-3 rounded-xl border border-white/30 shadow-2xl flex items-center gap-2.5 animate-fade-in">
           {isExporting ? (
             <Loader2 className="w-4 h-4 animate-spin text-white" />
           ) : (
-            <Sparkles className="w-4 h-4 text-white" />
+            <Sparkles className="w-4 h-4 text-accent" />
           )}
           <span>{exportMessage}</span>
         </div>
       )}
 
       {/* Floating Top Control Toolbar */}
-      <aside aria-label="Painel de Exportação e Visualização" className="sticky top-0 z-40 w-full bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/[0.12] px-4 py-2.5">
+      <aside aria-label="Painel de Exportação e Visualização" className="sticky top-0 z-40 w-full bg-primary/90 backdrop-blur-md border-b border-white/[0.12] px-4 py-2.5">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
           {/* Left: Brand / Badges */}
           <div className="flex items-center gap-2 sm:gap-3">
             <span className="text-[11px] font-bold text-white tracking-widest uppercase px-2.5 py-1 bg-white/10 rounded-md border border-white/20">
-              #0A0A0A &bull; WIREFRAME MINIMAL
+              #0A292A &bull; WIREFRAME MINIMAL
             </span>
             <span className="hidden md:inline-block text-xs text-white/60">
               AOS Topografia &bull; Nova Santa Rita / RS
@@ -178,7 +178,7 @@ export const ExportToolbar: React.FC<ExportToolbarProps> = ({
           </div>
 
           {/* Center: Zoom / Layout Controls */}
-          <div className="flex items-center gap-1 bg-black/80 border border-white/15 rounded-lg p-1">
+          <div className="flex items-center gap-1 bg-primary-light border border-white/15 rounded-lg p-1">
             <button
               onClick={() => setZoom((z) => Math.max(0.4, Number((z - 0.1).toFixed(2))))}
               title="Diminuir Zoom"
@@ -263,10 +263,10 @@ export const ExportToolbar: React.FC<ExportToolbarProps> = ({
             <button
               disabled={isExporting}
               onClick={() => handleExportPNG(4, '4x Ultra-HD')}
-              className="px-3.5 py-1.5 rounded-lg bg-white text-black hover:bg-white/90 text-xs font-bold flex items-center gap-1.5 transition disabled:opacity-50 shadow-md cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg bg-accent text-white hover:bg-accent-hover text-xs font-bold flex items-center gap-1.5 transition disabled:opacity-50 shadow-md cursor-pointer"
               title="Exportar Ultra HD para Apresentação ou Impressão (4x)"
             >
-              <Download className="w-3.5 h-3.5 text-black" />
+              <Download className="w-3.5 h-3.5 text-white" />
               <span>Ultra HD (4x)</span>
             </button>
           </div>
