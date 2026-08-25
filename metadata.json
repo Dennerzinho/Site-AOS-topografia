@@ -1,0 +1,6 @@
+{
+  "name": "AOS Topografia",
+  "description": "Site institucional da AOS Topografia com layout minimalista dark wireframe, formas geométricas e alto rigor tipográfico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
