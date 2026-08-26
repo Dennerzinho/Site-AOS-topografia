@@ -11,29 +11,18 @@ import { ScrollFrameAnimation } from './components/ScrollFrameAnimation';
 
 export default function App() {
   const bannerRef = useRef<HTMLDivElement | null>(null);
-  const [zoom, setZoom] = useState<number>(1);
   const [modalType, setModalType] = useState<ModalType>(null);
 
   return (
     <div className="min-h-screen bg-primary text-white flex flex-col selection:bg-accent selection:text-white">
       <ScrollFrameAnimation />
 
-      {/* Top Controls Toolbar for High-Res Export and View */}
-      <ExportToolbar
-        bannerRef={bannerRef}
-        zoom={zoom}
-        setZoom={setZoom}
-        onOpenModal={(type) => setModalType(type)}
-      />
+      {/* Barra fixa de identificacao no topo */}
+      <ExportToolbar />
 
       {/* Main Page Area */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-start p-0 sm:p-4 md:p-8 overflow-x-hidden">
-        <div
-          className="transition-transform duration-200 ease-out origin-top w-full flex justify-center"
-          style={{
-            transform: zoom !== 1 ? `scale(${zoom})` : undefined,
-          }}
-        >
+        <div className="w-full flex justify-center">
           <div className="w-full max-w-[1240px] border border-white/[0.12] rounded-none sm:rounded-[12px] overflow-hidden shadow-2xl">
             <AosTopografiaPage
               bannerRef={bannerRef}

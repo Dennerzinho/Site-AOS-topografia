@@ -31,28 +31,28 @@ export const ProficoBanner: React.FC<ProficoBannerProps> = ({ bannerRef }) => {
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-white">
           <a
             href="#about"
-            className="text-white hover:text-white/80 transition-colors duration-200"
+            className="text-white hover:text-white transition-colors duration-200"
             onClick={(e) => e.preventDefault()}
           >
             About
           </a>
           <a
             href="#courses"
-            className="text-white hover:text-white/80 transition-colors duration-200"
+            className="text-white hover:text-white transition-colors duration-200"
             onClick={(e) => e.preventDefault()}
           >
             Courses
           </a>
           <a
             href="#process"
-            className="text-white hover:text-white/80 transition-colors duration-200"
+            className="text-white hover:text-white transition-colors duration-200"
             onClick={(e) => e.preventDefault()}
           >
             Process
           </a>
           <a
             href="#faq"
-            className="text-white hover:text-white/80 transition-colors duration-200"
+            className="text-white hover:text-white transition-colors duration-200"
             onClick={(e) => e.preventDefault()}
           >
             FAQ
@@ -170,7 +170,7 @@ export const ProficoBanner: React.FC<ProficoBannerProps> = ({ bannerRef }) => {
               <h3 className="text-lg sm:text-xl font-bold text-white mb-3 tracking-tight">
                 Hands-on learning
               </h3>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-white leading-relaxed font-normal">
                 Each course will take you through the entire process of completing and testing a project.
               </p>
             </div>
@@ -180,7 +180,7 @@ export const ProficoBanner: React.FC<ProficoBannerProps> = ({ bannerRef }) => {
               <div className="relative -ml-2 -mb-2">
                 <RectangularPrism className="w-20 h-28 sm:w-24 sm:h-32 transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <span className="text-xs font-semibold text-white/80 tracking-wider absolute bottom-0 right-0">
+              <span className="text-xs font-semibold text-white tracking-wider absolute bottom-0 right-0">
                 01
               </span>
             </div>
@@ -192,14 +192,14 @@ export const ProficoBanner: React.FC<ProficoBannerProps> = ({ bannerRef }) => {
               <h3 className="text-lg sm:text-xl font-bold text-white mb-3 tracking-tight">
                 Mentorship by our experts
               </h3>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-white leading-relaxed font-normal">
                 Take advantage of your mentor’s expertise and gain industry-relevant feedback.
               </p>
             </div>
 
             {/* Bottom Number */}
             <div className="mt-8 flex items-end justify-end">
-              <span className="text-xs font-semibold text-white/80 tracking-wider">
+              <span className="text-xs font-semibold text-white tracking-wider">
                 02
               </span>
             </div>
@@ -211,7 +211,7 @@ export const ProficoBanner: React.FC<ProficoBannerProps> = ({ bannerRef }) => {
               <h3 className="text-lg sm:text-xl font-bold text-white mb-3 tracking-tight">
                 Widely applicable skills
               </h3>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-white leading-relaxed font-normal">
                 The Academy is designed to give you a solid foundation and boost your professional growth.
               </p>
             </div>
@@ -221,7 +221,7 @@ export const ProficoBanner: React.FC<ProficoBannerProps> = ({ bannerRef }) => {
               <div className="relative -ml-3 -mb-3">
                 <HexagonalPrism className="w-24 h-24 sm:w-28 sm:h-28 transform group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <span className="text-xs font-semibold text-white/80 tracking-wider absolute bottom-0 right-0">
+              <span className="text-xs font-semibold text-white tracking-wider absolute bottom-0 right-0">
                 03
               </span>
             </div>
@@ -233,14 +233,14 @@ export const ProficoBanner: React.FC<ProficoBannerProps> = ({ bannerRef }) => {
               <h3 className="text-lg sm:text-xl font-bold text-white mb-3 tracking-tight">
                 Street cred
               </h3>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-white leading-relaxed font-normal">
                 Upon completion you will receive a certificate verifying your new skills!
               </p>
             </div>
 
             {/* Geometric Pyramid Crystal Element */}
             <div className="mt-8 flex items-end justify-between relative z-0">
-              <span className="text-xs font-semibold text-white/80 tracking-wider absolute bottom-0 right-16 sm:right-20 z-10">
+              <span className="text-xs font-semibold text-white tracking-wider absolute bottom-0 right-16 sm:right-20 z-10">
                 04
               </span>
               <div className="relative -mr-4 -mb-4 ml-auto">
@@ -252,7 +252,7 @@ export const ProficoBanner: React.FC<ProficoBannerProps> = ({ bannerRef }) => {
       </section>
 
       {/* Subtle bottom padding */}
-      <footer className="w-full py-6 text-center border-t border-white/10 text-[11px] text-white/60 tracking-wider">
+      <footer className="w-full py-6 text-center border-t border-white/10 text-[11px] text-white tracking-wider">
         PROFICO ACADEMY &copy; {new Date().getFullYear()} — DEV &amp; DESIGN INTERNSHIP
       </footer>
     </div>
