@@ -422,13 +422,17 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         {/* Mosaico: 2 cards largos na primeira linha, 3 na segunda */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5">
           {/* Pilar: Comprometimento */}
-          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-3 h-[240px] sm:h-[290px] lg:h-[330px]">
+          <article
+            tabIndex={0}
+            onClick={(e) => e.currentTarget.focus()}
+            className="group relative overflow-hidden border-8 border-primary rounded-[12px] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:col-span-3 h-[240px] sm:h-[290px] lg:h-[330px]"
+          >
             <img
               src={pilarComprometimento}
               alt="Topógrafo da AOS operando estação total em campo"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
               <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Comprometimento
               </h3>
@@ -446,13 +450,17 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </article>
 
           {/* Pilar: Seriedade */}
-          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-3 h-[240px] sm:h-[290px] lg:h-[330px]">
+          <article
+            tabIndex={0}
+            onClick={(e) => e.currentTarget.focus()}
+            className="group relative overflow-hidden border-8 border-primary rounded-[12px] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:col-span-3 h-[240px] sm:h-[290px] lg:h-[330px]"
+          >
             <img
               src={pilarSeriedade}
               alt="Dois profissionais da AOS analisando o projeto na obra"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
               <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Seriedade
               </h3>
@@ -470,13 +478,17 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </article>
 
           {/* Pilar: Equipamentos */}
-          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
+          <article
+            tabIndex={0}
+            onClick={(e) => e.currentTarget.focus()}
+            className="group relative overflow-hidden border-8 border-primary rounded-[12px] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:col-span-2 h-[240px] sm:h-[250px]"
+          >
             <img
               src={pilarEquipamentos}
               alt="Receptores GNSS base e rover montados em campo"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
               <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Equipamentos
               </h3>
@@ -494,13 +506,17 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </article>
 
           {/* Pilar: Equipe preparada */}
-          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
+          <article
+            tabIndex={0}
+            onClick={(e) => e.currentTarget.focus()}
+            className="group relative overflow-hidden border-8 border-primary rounded-[12px] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:col-span-2 h-[240px] sm:h-[250px]"
+          >
             <img
               src={pilarEquipe}
               alt="Equipe da AOS Topografia em campo"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
               <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Equipe preparada
               </h3>
@@ -518,13 +534,17 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </article>
 
           {/* Pilar: Atenção */}
-          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
+          <article
+            tabIndex={0}
+            onClick={(e) => e.currentTarget.focus()}
+            className="group relative overflow-hidden border-8 border-primary rounded-[12px] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:col-span-2 h-[240px] sm:h-[250px]"
+          >
             <img
               src={pilarAtencao}
               alt="Técnico da AOS operando o coletor de dados"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
               <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Atenção
               </h3>
