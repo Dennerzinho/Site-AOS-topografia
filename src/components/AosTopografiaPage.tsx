@@ -562,113 +562,149 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             inclusive os escuros como o da Melnick */}
         <div className="bg-white rounded-[12px] px-5 sm:px-8 py-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroLog}
                 alt="LOG Commercial Properties"
                 title="LOG Commercial Properties"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroAncora}
                 alt="Âncora Engenharia"
                 title="Âncora Engenharia"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroMelnick}
                 alt="Melnick"
                 title="Melnick"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroTenda}
                 alt="Construtora Tenda"
                 title="Construtora Tenda"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroCorsan}
                 alt="Corsan"
                 title="Corsan"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroInnova}
                 alt="Polo Films & Innova"
                 title="Polo Films & Innova"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroDmae}
                 alt="DMAE — Departamento Municipal de Água e Esgotos"
                 title="DMAE — Departamento Municipal de Água e Esgotos"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroLyx}
                 alt="LYX"
                 title="LYX"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroSintra}
                 alt="Sintra Pavimentação, Saneamento e Engenharia"
                 title="Sintra Pavimentação, Saneamento e Engenharia"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroAbf}
                 alt="ABF Developments"
                 title="ABF Developments"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroAcepar}
                 alt="Acepar"
                 title="Acepar"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
 
-            <div className="h-12 flex items-center justify-center">
+            <button
+              type="button"
+              className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <img
                 src={parceiroMorana}
                 alt="Morana"
                 title="Morana"
-                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -785,7 +821,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/a-o-s-servi%C3%A7os-de-topografia-ltda-89502042a"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors"
