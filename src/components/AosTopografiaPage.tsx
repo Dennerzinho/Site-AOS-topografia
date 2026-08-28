@@ -11,6 +11,12 @@ import parceiroMelnick from '../assets/parceiros/melnick.png';
 import parceiroTenda from '../assets/parceiros/tenda.png';
 import parceiroCorsan from '../assets/parceiros/corsan.png';
 import parceiroInnova from '../assets/parceiros/innova.png';
+import parceiroDmae from '../assets/parceiros/dmae.png';
+import parceiroLyx from '../assets/parceiros/lyx.png';
+import parceiroSintra from '../assets/parceiros/sintra.png';
+import parceiroAbf from '../assets/parceiros/abf.webp';
+import parceiroAcepar from '../assets/parceiros/acepar.jpg';
+import parceiroMorana from '../assets/parceiros/morana.png';
 import {
   AOSLogo,
   WhatsAppIcon,
@@ -142,9 +148,6 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
       <section id="servicos" className="pt-10 sm:pt-12 pb-20 px-6 sm:px-10">
         <div className="mb-14 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-white font-semibold mb-2 block">
-              SEGMENTOS DE ATUAÇÃO
-            </span>
             <h2 className="text-2xl sm:text-4xl font-heading font-bold uppercase tracking-wider text-white">
               Onde a gente atua
             </h2>
@@ -157,7 +160,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         {/* Faixa compacta: 3 cards claros com icone laranja */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Residencial */}
-          <div className="bg-white rounded-[12px] p-6 flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-6 flex flex-col items-start border-8 border-primary">
             <div className="w-11 h-11 rounded-full bg-accent flex items-center justify-center mb-5">
               <House className="w-5 h-5 text-white" />
             </div>
@@ -170,7 +173,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </div>
 
           {/* Comercial */}
-          <div className="bg-white rounded-[12px] p-6 flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-6 flex flex-col items-start border-8 border-primary">
             <div className="w-11 h-11 rounded-full bg-accent flex items-center justify-center mb-5">
               <Building className="w-5 h-5 text-white" />
             </div>
@@ -183,7 +186,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </div>
 
           {/* Industrial */}
-          <div className="bg-white rounded-[12px] p-6 flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-6 flex flex-col items-start border-8 border-primary">
             <div className="w-11 h-11 rounded-full bg-accent flex items-center justify-center mb-5">
               <Factory className="w-5 h-5 text-white" />
             </div>
@@ -199,7 +202,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
       {/* =========================================================================
           4) SEÇÃO SOBRE
-          Eyebrow: SOBRE NÓS, Título: "Nossa Experiência", 2 parágrafos,
+          Título: "Nossa Experiência", 2 parágrafos,
           Malha wireframe topográfica em linhas finas brancas
          ========================================================================= */}
       <section
@@ -209,11 +212,6 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Coluna Texto (5 colunas) */}
           <div className="lg:col-span-6 flex flex-col">
-            {/* Eyebrow */}
-            <span className="text-xs uppercase tracking-[0.28em] text-white font-semibold mb-4 block">
-              SOBRE NÓS
-            </span>
-
             {/* Título */}
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-heading font-bold uppercase tracking-wider text-white mb-8">
               Nossa Experiência
@@ -233,7 +231,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           {/* Coluna Visual Wireframe Topográfico (7 colunas) */}
           <div className="lg:col-span-6">
             <div
-              className="bg-white border border-black/10 rounded-[12px] p-4 relative overflow-hidden flex flex-col justify-between"
+              className="bg-white border-8 border-primary rounded-[12px] p-4 relative overflow-hidden flex flex-col justify-between"
               style={{ borderRadius: '12px' }}
             >
               <div className="flex items-center justify-between mb-3 border-b border-black/10 pb-2">
@@ -255,7 +253,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               </div>
 
               <div className="mt-3 pt-2 border-t border-black/10 flex items-center justify-between text-[11px] text-text-secondary">
-                <span>Arnolemar Marques da Silva / Dono</span>
+                <span>Arnolemar Marques da Silva / Empresário</span>
                 <span>Nova Santa Rita / RS</span>
               </div>
             </div>
@@ -284,7 +282,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         {/* Grid de 6 cards claros */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Solução 01: Levantamento Planialtimétrico */}
-          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start border-8 border-primary">
             <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center mb-4">
               <ClipboardList className="w-5 h-5 text-white" />
             </div>
@@ -304,7 +302,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </div>
 
           {/* Solução 02: Georreferenciamento de Imóveis Rurais */}
-          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start border-8 border-primary">
             <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center mb-4">
               <Globe className="w-5 h-5 text-white" />
             </div>
@@ -324,7 +322,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </div>
 
           {/* Solução 03: Locação de Obras */}
-          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start border-8 border-primary">
             <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center mb-4">
               <Crosshair className="w-5 h-5 text-white" />
             </div>
@@ -344,7 +342,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </div>
 
           {/* Solução 04: Desmembramento */}
-          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start border-8 border-primary">
             <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center mb-4">
               <Scissors className="w-5 h-5 text-white" />
             </div>
@@ -364,7 +362,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </div>
 
           {/* Solução 05: Usucapião */}
-          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start border-8 border-primary">
             <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center mb-4">
               <UserCheck className="w-5 h-5 text-white" />
             </div>
@@ -384,7 +382,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </div>
 
           {/* Solução 06: Retificação */}
-          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start">
+          <div className="bg-white rounded-[12px] p-5 h-full flex flex-col items-start border-8 border-primary">
             <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center mb-4">
               <FileCheck2 className="w-5 h-5 text-white" />
             </div>
@@ -416,34 +414,31 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         className="py-24 sm:py-32 px-6 sm:px-10 border-t border-white/[0.12]"
       >
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-heading font-bold uppercase tracking-wider text-white mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-heading font-bold uppercase tracking-wider text-white">
             Nossos Pilares
           </h2>
-          <p className="text-base text-white leading-relaxed">
-            Passe o cursor sobre cada imagem para conhecer o que sustenta o nosso trabalho.
-          </p>
         </div>
 
         {/* Mosaico: 2 cards largos na primeira linha, 3 na segunda */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5">
           {/* Pilar: Comprometimento */}
-          <article className="group relative overflow-hidden rounded-[12px] lg:col-span-3 h-[240px] sm:h-[290px] lg:h-[330px]">
+          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-3 h-[240px] sm:h-[290px] lg:h-[330px]">
             <img
               src={pilarComprometimento}
               alt="Topógrafo da AOS operando estação total em campo"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-primary/88 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
-              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-white mb-2">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Comprometimento
               </h3>
-              <p className="text-[13px] sm:text-sm text-white leading-snug mb-4">
+              <p className="text-[13px] sm:text-sm text-text-primary leading-snug mb-4">
                 Nosso maior objetivo é entregar confiança. Estamos comprometidos em superar expectativas e contribuir para que cada obra seja um sucesso.
               </p>
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-white text-primary text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -451,23 +446,23 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </article>
 
           {/* Pilar: Seriedade */}
-          <article className="group relative overflow-hidden rounded-[12px] lg:col-span-3 h-[240px] sm:h-[290px] lg:h-[330px]">
+          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-3 h-[240px] sm:h-[290px] lg:h-[330px]">
             <img
               src={pilarSeriedade}
               alt="Dois profissionais da AOS analisando o projeto na obra"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-primary/88 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
-              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-white mb-2">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Seriedade
               </h3>
-              <p className="text-[13px] sm:text-sm text-white leading-snug mb-4">
+              <p className="text-[13px] sm:text-sm text-text-primary leading-snug mb-4">
                 Cada projeto é tratado com máxima responsabilidade e profissionalismo, assegurando resultados confiáveis e dentro dos prazos estabelecidos.
               </p>
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-white text-primary text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -475,23 +470,23 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </article>
 
           {/* Pilar: Equipamentos */}
-          <article className="group relative overflow-hidden rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
+          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
             <img
               src={pilarEquipamentos}
               alt="Receptores GNSS base e rover montados em campo"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-primary/88 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
-              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-white mb-2">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Equipamentos
               </h3>
-              <p className="text-[13px] sm:text-sm text-white leading-snug mb-4">
+              <p className="text-[13px] sm:text-sm text-text-primary leading-snug mb-4">
                 Trabalhamos com equipamentos modernos e tecnologia de ponta, garantindo precisão nas medições e agilidade em todos os processos topográficos.
               </p>
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-white text-primary text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -499,23 +494,23 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </article>
 
           {/* Pilar: Equipe preparada */}
-          <article className="group relative overflow-hidden rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
+          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
             <img
               src={pilarEquipe}
               alt="Equipe da AOS Topografia em campo"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-primary/88 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
-              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-white mb-2">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Equipe preparada
               </h3>
-              <p className="text-[13px] sm:text-sm text-white leading-snug mb-4">
+              <p className="text-[13px] sm:text-sm text-text-primary leading-snug mb-4">
                 Contamos com uma equipe altamente qualificada, formada por profissionais experientes e em constante atualização, prontos para atender projetos de diferentes portes e complexidades.
               </p>
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-white text-primary text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -523,23 +518,23 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </article>
 
           {/* Pilar: Atenção */}
-          <article className="group relative overflow-hidden rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
+          <article className="group relative overflow-hidden border-8 border-primary rounded-[12px] lg:col-span-2 h-[240px] sm:h-[250px]">
             <img
               src={pilarAtencao}
               alt="Técnico da AOS operando o coletor de dados"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-primary/88 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
-              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-white mb-2">
+            <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+              <h3 className="text-lg sm:text-xl font-heading font-bold uppercase tracking-wider text-primary mb-2">
                 Atenção
               </h3>
-              <p className="text-[13px] sm:text-sm text-white leading-snug mb-4">
+              <p className="text-[13px] sm:text-sm text-text-primary leading-snug mb-4">
                 Valorizamos cada cliente, ouvindo suas necessidades e oferecendo soluções personalizadas, sempre com foco nos detalhes que fazem a diferença.
               </p>
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-white text-primary text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -617,6 +612,60 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
                 src={parceiroInnova}
                 alt="Polo Films & Innova"
                 title="Polo Films & Innova"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            </div>
+
+            <div className="h-12 flex items-center justify-center">
+              <img
+                src={parceiroDmae}
+                alt="DMAE — Departamento Municipal de Água e Esgotos"
+                title="DMAE — Departamento Municipal de Água e Esgotos"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            </div>
+
+            <div className="h-12 flex items-center justify-center">
+              <img
+                src={parceiroLyx}
+                alt="LYX"
+                title="LYX"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            </div>
+
+            <div className="h-12 flex items-center justify-center">
+              <img
+                src={parceiroSintra}
+                alt="Sintra Pavimentação, Saneamento e Engenharia"
+                title="Sintra Pavimentação, Saneamento e Engenharia"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            </div>
+
+            <div className="h-12 flex items-center justify-center">
+              <img
+                src={parceiroAbf}
+                alt="ABF Developments"
+                title="ABF Developments"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            </div>
+
+            <div className="h-12 flex items-center justify-center">
+              <img
+                src={parceiroAcepar}
+                alt="Acepar"
+                title="Acepar"
+                className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            </div>
+
+            <div className="h-12 flex items-center justify-center">
+              <img
+                src={parceiroMorana}
+                alt="Morana"
+                title="Morana"
                 className="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               />
             </div>
