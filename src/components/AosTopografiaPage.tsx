@@ -115,11 +115,11 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           fica ancorada no topo e o botao logo abaixo do slogan.
           A altura desconta o que vem antes do hero na primeira tela: barra de
           identificacao (37px) + padding do main (0 / 16 / 32px) + borda do
-          cartao (1px) + navbar (89px). Assim o hero ocupa exatamente uma tela
-          e o centro do grid coincide com o centro do que se ve. */}
+          cartao (1px) + navbar (89px), mais 130px para o inicio da secao
+          seguinte ja aparecer no rodape da primeira tela. */}
       <section
         id="hero"
-        className="min-h-[calc(100svh_-_127px)] sm:min-h-[calc(100svh_-_143px)] md:min-h-[calc(100svh_-_159px)] py-6 sm:py-10 px-6 sm:px-10 text-center grid grid-rows-[1fr_auto_1fr] justify-items-center relative overflow-hidden"
+        className="min-h-[calc(100svh_-_257px)] sm:min-h-[calc(100svh_-_273px)] md:min-h-[calc(100svh_-_289px)] py-6 sm:py-10 px-6 sm:px-10 text-center grid grid-rows-[1fr_auto_1fr] justify-items-center relative overflow-hidden"
       >
         {/* Logo da empresa no lugar do título */}
         <img
