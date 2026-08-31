@@ -110,24 +110,31 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           2) HERO SECTION
           Eyebrow, título em duas linhas com tracking negativo, subtítulo e 2 CTAs.
          ========================================================================= */}
+      {/* Grid de 3 linhas (1fr / auto / 1fr): as duas linhas elasticas tem o
+          mesmo tamanho, entao o slogan cai exatamente no meio do hero. A logo
+          fica ancorada no topo e o botao logo abaixo do slogan.
+          A altura desconta o que vem antes do hero na primeira tela: barra de
+          identificacao (37px) + padding do main (0 / 16 / 32px) + borda do
+          cartao (1px) + navbar (89px). Assim o hero ocupa exatamente uma tela
+          e o centro do grid coincide com o centro do que se ve. */}
       <section
         id="hero"
-        className="min-h-[65vh] pt-2 sm:pt-4 pb-16 sm:pb-20 px-6 sm:px-10 text-center flex flex-col items-center justify-start relative overflow-hidden"
+        className="min-h-[calc(100svh_-_127px)] sm:min-h-[calc(100svh_-_143px)] md:min-h-[calc(100svh_-_159px)] py-6 sm:py-10 px-6 sm:px-10 text-center grid grid-rows-[1fr_auto_1fr] justify-items-center relative overflow-hidden"
       >
         {/* Logo da empresa no lugar do título */}
         <img
           src={aosLogo}
           alt="AOS Topografia"
-          className="h-16 sm:h-20 md:h-24 w-auto mb-20 sm:mb-24"
+          className="h-16 sm:h-20 md:h-24 w-auto self-start"
         />
 
-        {/* Slogan, logo abaixo da marca. E o <h1> da pagina. */}
-        <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-heading font-light uppercase tracking-[0.18em] text-white/70 mb-16 sm:mb-20">
+        {/* Slogan, no centro vertical do hero. E o <h1> da pagina. */}
+        <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-heading font-light uppercase tracking-[0.18em] text-white/70">
           Transformando medidas em resultados
         </h1>
 
-        {/* Botão de orçamento */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+        {/* Botão de orçamento, logo abaixo do slogan */}
+        <div className="self-start pt-10 sm:pt-14 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           {/* Botão único, centralizado */}
           <button
             type="button"
