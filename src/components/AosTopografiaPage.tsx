@@ -7,7 +7,7 @@ import pilarEquipe from '../assets/pilares/equipe.webp';
 import pilarAtencao from '../assets/pilares/atencao.webp';
 import parceiroLog from '../assets/parceiros/log.png';
 import parceiroAncora from '../assets/parceiros/ancora.png';
-import parceiroMelnick from '../assets/parceiros/melnick.png';
+import parceiroHenz from '../assets/parceiros/henz.png';
 import parceiroTenda from '../assets/parceiros/tenda.png';
 import parceiroCorsan from '../assets/parceiros/corsan.png';
 import parceiroInnova from '../assets/parceiros/innova.png';
@@ -579,7 +579,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         </div>
 
         {/* Faixa branca: garante que todo logo apareça na cor certa,
-            inclusive os escuros como o da Melnick */}
+            inclusive os mais escuros */}
         <div className="bg-white rounded-[12px] px-5 sm:px-8 py-6">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
             <button
@@ -611,9 +611,9 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               className="group h-12 flex items-center justify-center cursor-pointer rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               <img
-                src={parceiroMelnick}
-                alt="Melnick"
-                title="Melnick"
+                src={parceiroHenz}
+                alt="HENZ Engenharia"
+                title="HENZ Engenharia"
                 className="max-h-full max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 group-focus:grayscale-0 group-focus:opacity-100"
               />
             </button>
