@@ -1,6 +1,6 @@
 {
-  "name": "AOS Topografia",
-  "description": "Site institucional da AOS Topografia com layout minimalista dark wireframe, formas geométricas e alto rigor tipográfico.",
+  "name": "ARD Topografia e Agrimensura",
+  "description": "Site institucional da ARD Topografia e Agrimensura com layout minimalista dark wireframe, formas geométricas e alto rigor tipográfico.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

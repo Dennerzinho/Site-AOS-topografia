@@ -1,34 +1,41 @@
 @import "tailwindcss";
 
 /* =========================================================================
-   TOKENS DE COR - Identidade visual AOS Topografia
-   Verde petroleo + laranja + branco.
+   TOKENS DE COR - Identidade visual ARD Topografia e Agrimensura
+   Azul-marinho + dourado + branco, amostrados da logo.
    Alterar um valor aqui reflete em todo o site.
    Cada token vira tambem uma classe Tailwind:
      --color-primary       -> bg-primary / text-primary / border-primary
      --color-accent        -> bg-accent / text-accent / border-accent
+   Contraste (WCAG AA):
+     - Texto sobre bg-accent: use text-primary (6.1:1). Branco reprova (2.5:1).
+     - Texto dourado sobre fundo branco: use text-accent-strong (5.4:1).
    ========================================================================= */
 @theme static {
-  /* Primaria - verde petroleo */
-  --color-primary: #0A292A;
-  --color-primary-light: #113C3D;
+  /* Primaria - azul-marinho da logo */
+  --color-primary: #0B2540;
+  --color-primary-light: #14365C;
 
-  /* Secundaria - laranja (destaque, CTAs, icones) */
-  --color-accent: #FE930E;
-  --color-accent-hover: #E8840C;
+  /* Secundaria - dourado da logo (destaque, CTAs, icones) */
+  --color-accent: #C99B3E;
+  --color-accent-hover: #D4AA55;
+  /* Dourado escurecido, para texto sobre fundos claros */
+  --color-accent-strong: #8A6420;
+  /* Mesmo dourado em RGB, para usar com transparencia */
+  --color-accent-rgb: 201, 155, 62;
 
   /* Neutros */
-  --color-background: #F5F8F6;
+  --color-background: #F5F7FA;
   --color-white: #FFFFFF;
 
   /* Texto sobre fundos claros */
   --color-text-primary: #1A1A1A;
-  --color-text-secondary: #5F6666;
+  --color-text-secondary: #5F6670;
 }
 
 :root {
   /* Intensidade da imagem de fundo da hero.
-     0.55 = imagem visivel sob um overlay verde petroleo de ~45%.
+     0.55 = imagem visivel sob um overlay azul-marinho de ~45%.
      Aumente para revelar mais a imagem, diminua para escurecer. */
   --frame-visibility: 0.55;
 }
@@ -55,7 +62,7 @@
 
 /* Canvas das 274 frames: fica ATRAS do conteudo (z-index 0).
    O conteudo sobe para z-10 em App.tsx.
-   A opacidade abaixo faz o papel do overlay verde petroleo:
+   A opacidade abaixo faz o papel do overlay azul-marinho:
    a imagem compoe sobre o fundo --color-primary da pagina. */
 .scroll-frame-animation {
   position: fixed;
@@ -75,5 +82,5 @@
 }
 
 .wireframe-card:hover {
-  border-color: rgba(254, 147, 14, 0.45);
+  border-color: rgba(var(--color-accent-rgb), 0.45);
 }

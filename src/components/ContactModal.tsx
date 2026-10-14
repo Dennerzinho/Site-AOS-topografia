@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { X, Send, CheckCircle2, MessageSquare, Calendar, FileText, Loader2 } from 'lucide-react';
+import { X, Send, CheckCircle2, MessageSquare, Calendar, FileText, Loader2, Mail } from 'lucide-react';
+import { EMAIL_CONTATO, LINK_CONTATO } from '../config/contato';
 
 export type ModalType = 'orcamento' | 'reuniao' | 'formulario' | null;
 
@@ -12,7 +13,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [segment, setSegment] = useState('Residencial');
-  const [city, setCity] = useState('Nova Santa Rita / RS');
+  const [city, setCity] = useState('Canoas / RS');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -60,7 +61,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
 
     const chave = import.meta.env.VITE_WEB3FORMS_KEY;
     if (!chave) {
-      setError('O formulário ainda não foi configurado. Fale com a gente pelo WhatsApp.');
+      setError(`O formulário ainda não foi configurado. Fale com a gente pelo e-mail ${EMAIL_CONTATO}.`);
       return;
     }
 
@@ -71,8 +72,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: chave,
-          subject: `Site AOS — ${getTitle()}`,
-          from_name: 'Site AOS Topografia',
+          subject: `Site ARD — ${getTitle()}`,
+          from_name: 'Site ARD Topografia',
           replyto: email,
           Origem: getTitle(),
           Nome: name,
@@ -98,12 +99,10 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
     }
   };
 
-  const handleOpenWhatsApp = () => {
-    const text = encodeURIComponent(
-      `Olá! Gostaria de atendimento para topografia e georreferenciamento com a AOS Topografia. (Tipo: ${type || 'Orçamento'})`
-    );
-    // WhatsApp direct link sem expor número como texto impresso na tela
-    window.open(`https://api.whatsapp.com/send?phone=5551996818863&text=${text}`, '_blank');
+  // Contato direto, sem número de telefone na tela.
+  // TODO(Denner): quando houver o número novo, ajustar LINK_CONTATO em src/config/contato.ts
+  const handleOpenContato = () => {
+    window.location.href = LINK_CONTATO;
   };
 
   return (
@@ -130,7 +129,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                 {type === 'reuniao' && <Calendar className="w-3.5 h-3.5" />}
                 {type === 'orcamento' && <MessageSquare className="w-3.5 h-3.5" />}
                 {type === 'formulario' && <FileText className="w-3.5 h-3.5" />}
-                <span>AOS Topografia</span>
+                <span>ARD Topografia</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-heading font-bold uppercase tracking-wider text-white">
                 {getTitle()}
@@ -224,7 +223,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
                 <button
                   type="submit"
                   disabled={sending}
-                  className="flex-1 px-6 py-3 rounded-full bg-accent text-white font-semibold text-xs uppercase tracking-wider hover:bg-accent-hover transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="flex-1 px-6 py-3 rounded-full bg-accent text-primary font-semibold text-xs uppercase tracking-wider hover:bg-accent-hover transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {sending
                     ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -234,11 +233,11 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
 
                 <button
                   type="button"
-                  onClick={handleOpenWhatsApp}
+                  onClick={handleOpenContato}
                   className="px-5 py-3 rounded-full border border-white hover:border-white bg-transparent hover:bg-white text-white hover:text-primary font-medium text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <MessageSquare className="w-3.5 h-3.5" />
-                  <span>Falar no WhatsApp</span>
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>Enviar e-mail</span>
                 </button>
               </div>
             </form>
@@ -252,22 +251,22 @@ export const ContactModal: React.FC<ContactModalProps> = ({ type, onClose }) => 
               Solicitação Registrada!
             </h4>
             <p className="text-sm text-white max-w-sm mb-6 leading-relaxed">
-              Obrigado, <strong className="text-white">{name}</strong>. Nossa equipe técnica da AOS Topografia responderá em breve através do e-mail informado.
+              Obrigado, <strong className="text-white">{name}</strong>. Nossa equipe técnica da ARD Topografia responderá em breve através do e-mail informado.
             </p>
             <div className="flex gap-3">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-6 py-2.5 rounded-full bg-accent text-white font-semibold text-xs uppercase tracking-wider hover:bg-accent-hover transition-all"
+                className="px-6 py-2.5 rounded-full bg-accent text-primary font-semibold text-xs uppercase tracking-wider hover:bg-accent-hover transition-all"
               >
                 Concluir
               </button>
               <button
                 type="button"
-                onClick={handleOpenWhatsApp}
+                onClick={handleOpenContato}
                 className="px-5 py-2.5 rounded-full border border-white hover:border-white hover:bg-white hover:text-primary text-white text-xs uppercase tracking-wider transition-all"
               >
-                Abrir WhatsApp
+                Enviar e-mail
               </button>
             </div>
           </div>

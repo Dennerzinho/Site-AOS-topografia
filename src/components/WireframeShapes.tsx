@@ -1,12 +1,10 @@
 import React from 'react';
-import aosLogo from '../assets/aos-logo.png';
 
 /**
  * High-precision vector wireframe geometric shapes on pure dark background
  * (Thin white lines, technical coordinates, isometric grid meshes).
  */
 
-// Monogram Logo: AOS Topografia with geometric coordinate marker
 // Glifo do WhatsApp, para os botoes que abrem a conversa
 export const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -14,13 +12,15 @@ export const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = "w-
   </svg>
 );
 
-export const AOSLogo: React.FC<{ className?: string }> = ({ className = "" }) => {
+// Logo da ARD. A versão branca com dourado (sem fundo) é para fundos escuros;
+// a versão com fundo azul-marinho fica em /assets/ard-logo-fundo.png para fundos claros.
+export const ARDLogo: React.FC<{ className?: string; variant?: 'escuro' | 'claro' }> = ({ className = "", variant = 'escuro' }) => {
   return (
     <div className={`flex items-center cursor-pointer group select-none ${className}`}>
       <img
-        src={aosLogo}
-        alt="AOS Topografia"
-        className="h-10 w-auto opacity-95 group-hover:opacity-100 transition-opacity"
+        src={variant === 'escuro' ? '/assets/ard-logo-branca.png' : '/assets/ard-logo-fundo.png'}
+        alt="ARD Topografia e Agrimensura"
+        className="h-12 w-auto opacity-95 group-hover:opacity-100 transition-opacity"
       />
     </div>
   );

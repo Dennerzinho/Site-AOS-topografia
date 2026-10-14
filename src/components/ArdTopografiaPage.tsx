@@ -1,5 +1,4 @@
 import React from 'react';
-import aosLogo from '../assets/aos-logo.png';
 import pilarComprometimento from '../assets/pilares/comprometimento.webp';
 import pilarSeriedade from '../assets/pilares/seriedade.webp';
 import pilarEquipamentos from '../assets/pilares/equipamentos.webp';
@@ -18,34 +17,26 @@ import parceiroAbf from '../assets/parceiros/abf.webp';
 import parceiroAcepar from '../assets/parceiros/acepar.jpg';
 import parceiroMorana from '../assets/parceiros/morana.png';
 import {
-  AOSLogo,
-  WhatsAppIcon,
+  ARDLogo,
 } from './WireframeShapes';
 import { ModalType } from './ContactModal';
-import { Mail, MapPin, ArrowRight, MessageSquare, Linkedin, Instagram, House, Building, Factory, ClipboardList, Globe, Crosshair, Scissors, UserCheck, FileCheck2 } from 'lucide-react';
+import { EMAIL_CONTATO, LINK_CONTATO, INSTAGRAM_URL, LINKEDIN_URL, ENDERECO } from '../config/contato';
+import { Mail, MapPin, ArrowRight, Linkedin, Instagram, House, Building, Factory, ClipboardList, Globe, Crosshair, Scissors, UserCheck, FileCheck2 } from 'lucide-react';
 
-interface AosTopografiaPageProps {
+interface ArdTopografiaPageProps {
   onOpenModal: (type: ModalType) => void;
   bannerRef?: React.RefObject<HTMLDivElement | null>;
 }
 
-export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
+export const ArdTopografiaPage: React.FC<ArdTopografiaPageProps> = ({
   onOpenModal,
   bannerRef,
 }) => {
-  // Direct WhatsApp click handler (no phone number text rendered on screen)
-  const handleWhatsAppClick = () => {
-    const text = encodeURIComponent(
-      'Olá! Gostaria de mais informações sobre os serviços de topografia e georreferenciamento da AOS Topografia.'
-    );
-    window.open(`https://api.whatsapp.com/send?phone=5551996818863&text=${text}`, '_blank');
-  };
-
   return (
     <div
       ref={bannerRef}
-      id="aos-topografia-layout"
-      className="w-full max-w-[1240px] mx-auto text-white selection:bg-accent selection:text-white box-border flex flex-col font-sans"
+      id="ard-topografia-layout"
+      className="w-full max-w-[1240px] mx-auto text-white selection:bg-accent selection:text-primary box-border flex flex-col font-sans"
       style={{
         backgroundColor: 'transparent',
         color: '#FFFFFF',
@@ -53,7 +44,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
     >
       {/* =========================================================================
           1) NAVBAR
-          Logo com monograma AOS à esquerda, links centrais e botão pill à direita.
+          Logo da ARD à esquerda, links centrais e botão pill à direita.
          ========================================================================= */}
       <header
         id="navbar"
@@ -61,7 +52,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
       >
         {/* Logo à esquerda */}
         <a href="#hero" className="flex-1 flex items-center no-underline">
-          <AOSLogo />
+          <ARDLogo />
         </a>
 
         {/* Links centrais */}
@@ -92,17 +83,16 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </a>
         </nav>
 
-        {/* Botão de WhatsApp à direita */}
+        {/* Botão de contato à direita.
+            TODO(Denner): quando houver o número novo, ajustar LINK_CONTATO em src/config/contato.ts */}
         <div className="flex-1 flex justify-end">
-          <button
-            type="button"
-            onClick={handleWhatsAppClick}
-            aria-label="Falar no WhatsApp: (51) 9 9681-8863"
-            className="flex items-center gap-2 text-sm font-medium text-white/90 hover:text-accent transition-colors duration-200 cursor-pointer whitespace-nowrap"
+          <a
+            href={LINK_CONTATO}
+            className="flex items-center gap-2 text-sm font-medium text-white/90 hover:text-accent transition-colors duration-200 cursor-pointer whitespace-nowrap no-underline"
           >
-            <WhatsAppIcon className="w-4 h-4" />
-            <span>(51) 9 9681-8863</span>
-          </button>
+            <Mail className="w-4 h-4" />
+            <span>Fale conosco</span>
+          </a>
         </div>
       </header>
 
@@ -123,9 +113,9 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
       >
         {/* Logo da empresa no lugar do título */}
         <img
-          src={aosLogo}
-          alt="AOS Topografia"
-          className="h-16 sm:h-20 md:h-24 w-auto self-start"
+          src="/assets/ard-logo-branca.png"
+          alt="ARD Topografia e Agrimensura"
+          className="h-20 sm:h-24 md:h-28 w-auto self-start"
         />
 
         {/* Slogan, no centro vertical do hero. E o <h1> da pagina. */}
@@ -139,8 +129,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           <button
             type="button"
             onClick={() => onOpenModal('orcamento')}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-200 cursor-pointer shadow-lg flex items-center justify-center gap-2"
-            style={{ backgroundColor: '#FE930E', color: '#FFFFFF' }}
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent text-primary font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-200 cursor-pointer shadow-lg flex items-center justify-center gap-2"
           >
             <span>Faça seu orçamento</span>
             <ArrowRight className="w-4 h-4" />
@@ -164,7 +153,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           </p>
         </div>
 
-        {/* Faixa compacta: 3 cards claros com icone laranja */}
+        {/* Faixa compacta: 3 cards claros com icone dourado */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Residencial */}
           <div className="bg-white rounded-[12px] p-6 flex flex-col items-start border-8 border-primary">
@@ -174,7 +163,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-base font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Residencial
             </h3>
-            <p className="text-xs text-accent leading-relaxed">
+            <p className="text-xs text-accent-strong leading-relaxed">
               Topografia confiável para quem deseja construir histórias em família.
             </p>
           </div>
@@ -187,7 +176,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-base font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Comercial
             </h3>
-            <p className="text-xs text-accent leading-relaxed">
+            <p className="text-xs text-accent-strong leading-relaxed">
               Soluções sob medida para empreendimentos comerciais de pequeno e grande porte.
             </p>
           </div>
@@ -200,7 +189,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-base font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Industrial
             </h3>
-            <p className="text-xs text-accent leading-relaxed">
+            <p className="text-xs text-accent-strong leading-relaxed">
               Topografia industrial com tecnologia avançada e resultados de alta precisão.
             </p>
           </div>
@@ -226,12 +215,12 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
             {/* Parágrafo 1 */}
             <p className="text-base sm:text-lg text-white leading-relaxed mb-6 font-normal">
-              Fundada no Rio Grande do Sul, nossa empresa se tornou referência em precisão e inovação em topografia. Nos últimos anos, fomos a empresa do setor que mais cresceu no estado, participando de grandes obras e conquistando a confiança de engenheiros, construtoras e arquitetos.
+              Fundada no Rio Grande do Sul, inicialmente como <strong className="font-semibold text-accent">AOS Topografia</strong>, nossa empresa se tornou referência em precisão e inovação em topografia. Nos últimos anos, fomos a empresa do setor que mais cresceu no estado, participando de grandes obras e conquistando a confiança de engenheiros, construtoras e arquitetos.
             </p>
 
             {/* Parágrafo 2 */}
             <p className="text-base sm:text-lg text-white leading-relaxed mb-10 font-normal">
-              Com tecnologia de ponta e equipe qualificada, garantimos que cada projeto comece com dados confiáveis, segurança e tranquilidade para nossos clientes.
+              A ARD Topografia e Agrimensura conta com tecnologia de ponta e equipe qualificada. Garantimos que cada projeto comece com dados confiáveis, segurança e tranquilidade para nossos clientes.
             </p>
           </div>
 
@@ -245,7 +234,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-[11px] uppercase tracking-wider text-text-primary font-semibold">
-                    AOS TOPOGRAFIA / EQUIPE EM CAMPO
+                    ARD TOPOGRAFIA / EQUIPE EM CAMPO
                   </span>
                 </div>
               </div>
@@ -253,15 +242,15 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               {/* Foto da equipe em campo */}
               <div className="w-full">
                 <img
-                  src="/aos-equipe.webp"
-                  alt="Equipe da AOS Topografia em campo"
+                  src="/assets/equipe-campo.webp"
+                  alt="Equipe da ARD Topografia em campo"
                   className="w-full h-[280px] sm:h-[330px] object-cover object-[50%_26%] rounded-lg"
                 />
               </div>
 
               <div className="mt-3 pt-2 border-t border-black/10 flex items-center justify-between text-[11px] text-text-secondary">
                 <span>Arnolemar Marques da Silva / Empresário</span>
-                <span>Nova Santa Rita / RS</span>
+                <span>Canoas / RS</span>
               </div>
             </div>
           </div>
@@ -271,7 +260,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
       {/* =========================================================================
           5) SEÇÃO DE SOLUÇÕES
           Título: "Como podemos ajudar no seu projeto:"
-          Grid de 6 cards claros: ícone laranja, descrição e botão "Saiba Mais!"
+          Grid de 6 cards claros: ícone dourado, descrição e botão "Saiba Mais!"
          ========================================================================= */}
       <section
         id="solucoes"
@@ -296,13 +285,13 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Levantamento Planialtimétrico
             </h3>
-            <p className="text-xs text-accent leading-relaxed mb-4">
+            <p className="text-xs text-accent-strong leading-relaxed mb-4">
               Medições detalhadas para projetos de engenharia e arquitetura.
             </p>
             <button
               type="button"
               onClick={() => onOpenModal('orcamento')}
-              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-primary transition-colors cursor-pointer"
             >
               Saiba Mais!
             </button>
@@ -316,13 +305,13 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Georreferenciamento de Imóveis Rurais
             </h3>
-            <p className="text-xs text-accent leading-relaxed mb-4">
+            <p className="text-xs text-accent-strong leading-relaxed mb-4">
               Conformidade legal e precisão na demarcação de propriedades.
             </p>
             <button
               type="button"
               onClick={() => onOpenModal('orcamento')}
-              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-primary transition-colors cursor-pointer"
             >
               Saiba Mais!
             </button>
@@ -336,13 +325,13 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Locação de Obras
             </h3>
-            <p className="text-xs text-accent leading-relaxed mb-4">
+            <p className="text-xs text-accent-strong leading-relaxed mb-4">
               Marcação exata para execução de construções.
             </p>
             <button
               type="button"
               onClick={() => onOpenModal('orcamento')}
-              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-primary transition-colors cursor-pointer"
             >
               Saiba Mais!
             </button>
@@ -356,13 +345,13 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Desmembramento
             </h3>
-            <p className="text-xs text-accent leading-relaxed mb-4">
+            <p className="text-xs text-accent-strong leading-relaxed mb-4">
               Efetuamos a divisão regularizada de áreas urbanas e rurais.
             </p>
             <button
               type="button"
               onClick={() => onOpenModal('orcamento')}
-              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-primary transition-colors cursor-pointer"
             >
               Saiba Mais!
             </button>
@@ -376,13 +365,13 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Usucapião
             </h3>
-            <p className="text-xs text-accent leading-relaxed mb-4">
+            <p className="text-xs text-accent-strong leading-relaxed mb-4">
               Suporte técnico para processos de regularização.
             </p>
             <button
               type="button"
               onClick={() => onOpenModal('orcamento')}
-              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-primary transition-colors cursor-pointer"
             >
               Saiba Mais!
             </button>
@@ -396,13 +385,13 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-text-primary mb-2">
               Retificação
             </h3>
-            <p className="text-xs text-accent leading-relaxed mb-4">
+            <p className="text-xs text-accent-strong leading-relaxed mb-4">
               Correções de registros imobiliários com base em medições atualizadas.
             </p>
             <button
               type="button"
               onClick={() => onOpenModal('orcamento')}
-              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-white transition-colors cursor-pointer"
+              className="mt-auto px-3 py-1.5 rounded-md border border-black/10 text-text-primary text-[11px] font-semibold hover:bg-accent hover:border-accent hover:text-primary transition-colors cursor-pointer"
             >
               Saiba Mais!
             </button>
@@ -436,7 +425,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           >
             <img
               src={pilarComprometimento}
-              alt="Topógrafo da AOS operando estação total em campo"
+              alt="Topógrafo da ARD operando estação total em campo"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
@@ -449,7 +438,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-primary transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -464,7 +453,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           >
             <img
               src={pilarSeriedade}
-              alt="Dois profissionais da AOS analisando o projeto na obra"
+              alt="Dois profissionais da ARD analisando o projeto na obra"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
@@ -477,7 +466,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-primary transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -505,7 +494,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-primary transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -520,7 +509,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           >
             <img
               src={pilarEquipe}
-              alt="Equipe da AOS Topografia em campo"
+              alt="Equipe da ARD Topografia em campo"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
@@ -533,7 +522,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-primary transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -548,7 +537,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
           >
             <img
               src={pilarAtencao}
-              alt="Técnico da AOS operando o coletor de dados"
+              alt="Técnico da ARD operando o coletor de dados"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-white/70 flex flex-col justify-end p-5 sm:p-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
@@ -561,7 +550,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenModal('orcamento')}
-                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-white transition-colors cursor-pointer"
+                className="self-start px-4 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-accent hover:text-primary transition-colors cursor-pointer"
               >
                 Saiba Mais!
               </button>
@@ -739,12 +728,12 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
       {/* =========================================================================
           8) CONTATO / RODAPÉ
           Título: "O primeiro passo da sua obra começa aqui"
-          Botões: "Falar no WhatsApp" e "Peça um formulário"
+          Botões: "Fale conosco" e "Peça um formulário"
           Informações (SEM telefone):
-            E-mail: aos.topografia@outlook.com
-            Endereço: Rua Carlos de Souza Pereira, 59 — Nova Santa Rita / RS
-          Ícones sociais: WhatsApp, Instagram, LinkedIn
-          Linha final do rodapé: "AOS TOPOGRAFIA © 2026 — TOPOGRAFIA E GEORREFERENCIAMENTO"
+            E-mail: ver src/config/contato.ts
+            Endereço: ver src/config/contato.ts
+          Ícones sociais: e-mail, Instagram, LinkedIn
+          Linha final do rodapé: "ARD TOPOGRAFIA © 2026 — TOPOGRAFIA E GEORREFERENCIAMENTO"
          ========================================================================= */}
       <footer
         id="contato"
@@ -765,16 +754,15 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
           {/* Botões de Contato */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-            {/* Botão: Falar no WhatsApp */}
-            <button
-              type="button"
-              onClick={handleWhatsAppClick}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-200 cursor-pointer shadow-lg flex items-center justify-center gap-2"
-              style={{ backgroundColor: '#FE930E', color: '#FFFFFF' }}
+            {/* Botão: Fale conosco.
+                TODO(Denner): definir o número novo em src/config/contato.ts */}
+            <a
+              href={LINK_CONTATO}
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent text-primary font-heading font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-accent-hover transition-all duration-200 cursor-pointer shadow-lg flex items-center justify-center gap-2 no-underline"
             >
-              <MessageSquare className="w-4 h-4" />
-              <span>Falar no WhatsApp</span>
-            </button>
+              <Mail className="w-4 h-4" />
+              <span>Fale conosco</span>
+            </a>
 
             {/* Botão: Peça um formulário */}
             <button
@@ -791,7 +779,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 py-10 border-t border-b border-white/[0.12]">
           {/* Coluna 1: Marca & Descrição */}
           <div className="md:col-span-5 flex flex-col">
-            <AOSLogo className="mb-4" />
+            <ARDLogo className="mb-4" />
             <p className="text-xs sm:text-sm text-white max-w-sm leading-relaxed">
               Topografia de excelência e georreferenciamento com soluções de alta precisão para obras residenciais, comerciais e industriais.
             </p>
@@ -806,13 +794,13 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             {/* E-mail */}
             <div className="flex items-center gap-2.5 text-xs sm:text-sm text-white">
               <Mail className="w-4 h-4 text-accent flex-shrink-0" />
-              <span>aos.topografia@outlook.com</span>
+              <a href={`mailto:${EMAIL_CONTATO}`} className="hover:text-accent transition-colors">{EMAIL_CONTATO}</a>
             </div>
 
             {/* Endereço */}
             <div className="flex items-start gap-2.5 text-xs sm:text-sm text-white">
               <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-              <span>Rua Carlos de Souza Pereira, 59 — Nova Santa Rita / RS</span>
+              <span>{ENDERECO}</span>
             </div>
           </div>
 
@@ -823,40 +811,43 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
             </span>
 
             <div className="flex items-center space-x-3">
-              {/* WhatsApp */}
-              <button
-                type="button"
-                onClick={handleWhatsAppClick}
-                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors cursor-pointer"
-                title="WhatsApp"
-                aria-label="WhatsApp"
-              >
-                <WhatsAppIcon className="w-4 h-4" />
-              </button>
-
-              {/* Instagram */}
+              {/* Contato (no lugar do antigo botão de WhatsApp) */}
               <a
-                href="https://www.instagram.com/aos_topografia/"
-                target="_blank"
-                rel="noreferrer"
+                href={LINK_CONTATO}
                 className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors"
-                title="Instagram"
-                aria-label="Instagram"
+                title="Fale conosco"
+                aria-label="Fale conosco"
               >
-                <Instagram className="w-4 h-4" />
+                <Mail className="w-4 h-4" />
               </a>
 
-              {/* LinkedIn */}
-              <a
-                href="https://www.linkedin.com/in/a-o-s-servi%C3%A7os-de-topografia-ltda-89502042a"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors"
-                title="LinkedIn"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
+              {/* Instagram e LinkedIn só aparecem quando o link estiver definido.
+                  TODO(Denner): informar os perfis da ARD em src/config/contato.ts */}
+              {INSTAGRAM_URL && (
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors"
+                  title="Instagram"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+              )}
+
+              {LINKEDIN_URL && (
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-9 h-9 rounded-lg border border-white/[0.15] bg-primary-light/85 backdrop-blur-sm hover:bg-accent/15 hover:border-accent hover:text-accent flex items-center justify-center text-white transition-colors"
+                  title="LinkedIn"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              )}
 
             </div>
           </div>
@@ -864,7 +855,7 @@ export const AosTopografiaPage: React.FC<AosTopografiaPageProps> = ({
 
         {/* Linha final do rodapé */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-white tracking-wider uppercase font-medium">
-          <span>AOS TOPOGRAFIA &copy; 2026 — TOPOGRAFIA E GEORREFERENCIAMENTO</span>
+          <span>ARD TOPOGRAFIA &copy; 2026 — TOPOGRAFIA E GEORREFERENCIAMENTO</span>
           <span className="text-[11px] text-white">
             RIO GRANDE DO SUL
           </span>

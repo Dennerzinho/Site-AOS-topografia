@@ -13,7 +13,7 @@ export const ExportToolbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-center">
         <span className="text-xs text-white/60 text-center">
-          AOS Topografia
+          ARD Topografia e Agrimensura
         </span>
       </div>
     </aside>
